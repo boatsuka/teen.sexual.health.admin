@@ -8,14 +8,14 @@ import Dashboard from "./pages/Dashboard";
 import PreLayout from "./components/PreLayout";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Fragment>
       <BrowserRouter>
         <Routes>
           <Route element={<PreLayout />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="teacher">
+              <Route index element={<Dashboard />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
