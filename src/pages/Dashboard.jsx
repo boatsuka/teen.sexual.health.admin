@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import { Space, Table, Tag, Card, Row, Col, Statistic, Button } from "antd";
 
@@ -77,6 +78,7 @@ const data = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Row gutter={[16, 16]}>
@@ -122,10 +124,11 @@ const Dashboard = () => {
             style={{
               marginBottom: 16,
             }}
+            onClick={() => navigate("/teacher/profile")}
           >
             เพิ่มข้อมูลนักเรียน
           </Button>
-          <Table columns={columns} dataSource={data}  />
+          <Table columns={columns} dataSource={data} />
         </Col>
       </Row>
     </div>
